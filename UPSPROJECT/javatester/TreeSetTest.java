@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.TreeSet;
 import java.util.Iterator;
 import java.util.Scanner;
+import javatester.Person;
 
 public class TreeSetTest {
     private static TreeSet<Integer> intSet;
