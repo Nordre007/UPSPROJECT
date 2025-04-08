@@ -3,6 +3,7 @@ package javatester;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
+import java.util.Set;
 import java.util.HashSet;
 import java.util.ArrayList;
 import java.io.FileWriter;
@@ -17,17 +18,17 @@ public class HashSetTest {
     private static ArrayList<Integer> IntList;
     private static ArrayList<String> StringList;
 
-    private static final int SmallestInt = 1;
-    private static final int BiggestInt = 2;
-    private static final int MiddleInt = 3;
+    private static final int SmallestInt = 2;
+    private static final int BiggestInt = 227814;
+    private static final int MiddleInt = 456996;
 
-    private static final String SmallestString = "a";
-    private static final String BiggestString = "b";
-    private static final String MiddleString = "c";
+    private static final String SmallestString = "aaaa";
+    private static final String BiggestString = "mzmv";
+    private static final String MiddleString = "zzzy";
 
-    private static final Person SmallestPerson = new Person(1, "a");
-    private static final Person BiggestPerson = new Person(2, "b");
-    private static final Person MiddlePerson = new Person(3, "c");
+    private static final Person SmallestPerson = new Person(2, "aaaa");
+    private static final Person BiggestPerson = new Person(227814, "mzmv");
+    private static final Person MiddlePerson = new Person(456996, "zzzy");
 
     /*
      * 16 filer som parametrar?
@@ -139,17 +140,22 @@ public class HashSetTest {
 
     public static void addInt(ArrayList<Integer> input, FileWriter output) throws IOException {
         for (int i = 1; i <= 600; i++) {
-            intSet = new HashSet<Integer>();
+            
+
             Iterator<Integer> itr = input.iterator();
+            intSet = new HashSet<Integer>();
 
             long startInputInt = System.nanoTime();
             while (itr.hasNext()) {
 
                 intSet.add(itr.next());
             }
+            /*for(int j = 1; j <= 100_000; j++) {
+                intSet.add((int) (Math.random() * 100_000));
+            }*/
             long stopInputInt = System.nanoTime();
 
-            output.write(i + ", " + (stopInputInt - startInputInt) / 1000 + "\n");
+            output.write(i + ", " + (stopInputInt - startInputInt) + "\n");
         }
     }
 
@@ -166,7 +172,7 @@ public class HashSetTest {
             }
             long stopInputInt = System.nanoTime();
 
-            output.write(i + ", " + (stopInputInt - startInputInt) / 1000 + "\n");
+            output.write(i + ", " + (stopInputInt - startInputInt)  + "\n");
         }
     }
 
@@ -182,18 +188,18 @@ public class HashSetTest {
             }
             long stopInputInt = System.nanoTime();
 
-            output.write(i + ", " + (stopInputInt - startInputInt) / 1000 + "\n");
+            output.write(i + ", " + (stopInputInt - startInputInt)  + "\n");
         }
     }
 
-    public static void findInt(HashSet<Integer> set, int e, FileWriter file) throws IOException {
+    public static void findInt(HashSet<Integer> set, Integer e, FileWriter file) throws IOException {
         for (int i = 1; i <= 600; i++) {
 
             long startInputInt = System.nanoTime();
             set.contains(e);
             long stopInputInt = System.nanoTime();
 
-            file.write(i + ", " + (stopInputInt - startInputInt) / 1000 + "\n");
+            file.write(i + ", " + (stopInputInt - startInputInt)  + "\n");
         }
     }
 
@@ -204,7 +210,7 @@ public class HashSetTest {
             set.contains(e);
             long stopInputInt = System.nanoTime();
 
-            file.write(i + ", " + (stopInputInt - startInputInt) / 1000 + "\n");
+            file.write(i + ", " + (stopInputInt - startInputInt)  + "\n");
         }
     }
 
@@ -215,7 +221,7 @@ public class HashSetTest {
             set.contains(e);
             long stopInputInt = System.nanoTime();
 
-            file.write(i + ", " + (stopInputInt - startInputInt) / 1000 + "\n");
+            file.write(i + ", " + (stopInputInt - startInputInt)  + "\n");
         }
     }
 }

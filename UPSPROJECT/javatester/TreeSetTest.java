@@ -17,17 +17,17 @@ public class TreeSetTest {
     private static ArrayList<Integer> IntList;
     private static ArrayList<String> StringList;
 
-    private static final int SmallestInt = 287;
-    private static final int BiggestInt = 245138;
-    private static final int MiddleInt = 456794;
+    private static final int SmallestInt = 2;
+    private static final int BiggestInt = 227814;
+    private static final int MiddleInt = 456996;
 
-    private static final String SmallestString = "aajz";
-    private static final String BiggestString = "mplr";
-    private static final String MiddleString = "zziu";
+    private static final String SmallestString = "aaaa";
+    private static final String BiggestString = "mzmv";
+    private static final String MiddleString = "zzzy";
 
-    private static final Person SmallestPerson = new Person(287, "aajz");
-    private static final Person BiggestPerson = new Person(245138, "mplr");
-    private static final Person MiddlePerson = new Person(456794, "zziu");
+    private static final Person SmallestPerson = new Person(2, "aaaa");
+    private static final Person BiggestPerson = new Person(227814, "mzmv");
+    private static final Person MiddlePerson = new Person(456996, "zzzy");
 
     /*
      * 16 filer som parametrar?
@@ -149,7 +149,7 @@ public class TreeSetTest {
             }
             long stopInputInt = System.nanoTime();
 
-            output.write(i + ", " + (stopInputInt - startInputInt) / 1000 + "\n");
+            output.write(i + ", " + (stopInputInt - startInputInt)  + "\n");
         }
     }
 
@@ -166,7 +166,7 @@ public class TreeSetTest {
             }
             long stopInputInt = System.nanoTime();
 
-            output.write(i + ", " + (stopInputInt - startInputInt) / 1000 + "\n");
+            output.write(i + ", " + (stopInputInt - startInputInt)  + "\n");
         }
     }
 
@@ -182,7 +182,7 @@ public class TreeSetTest {
             }
             long stopInputInt = System.nanoTime();
 
-            output.write(i + ", " + (stopInputInt - startInputInt) / 1000 + "\n");
+            output.write(i + ", " + (stopInputInt - startInputInt)  + "\n");
         }
     }
 
@@ -193,7 +193,7 @@ public class TreeSetTest {
             set.contains(e);
             long stopInputInt = System.nanoTime();
 
-            file.write(i + ", " + (stopInputInt - startInputInt) / 1000 + "\n");
+            file.write(i + ", " + (stopInputInt - startInputInt) + "\n");
         }
     }
 
@@ -204,7 +204,7 @@ public class TreeSetTest {
             set.contains(e);
             long stopInputInt = System.nanoTime();
 
-            file.write(i + ", " + (stopInputInt - startInputInt) / 1000 + "\n");
+            file.write(i + ", " + (stopInputInt - startInputInt)  + "\n");
         }
     }
 
@@ -215,7 +215,7 @@ public class TreeSetTest {
             set.contains(e);
             long stopInputInt = System.nanoTime();
 
-            file.write(i + ", " + (stopInputInt - startInputInt) / 1000 + "\n");
+            file.write(i + ", " + (stopInputInt - startInputInt)  + "\n");
         }
     }
 }
