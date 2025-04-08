@@ -1,16 +1,17 @@
-random_numbers <- sample(1:1000, 1000, replace = TRUE)
+random_numbers <- sample(1:457000, 1000, replace = TRUE)
 
-write(random_numbers, file = "/h/d2/a/ka2300sk-s/UPSPROJECT/data/integer.txt", ncolumns = 1)
-
+write(random_numbers, file = "/h/d1/g/er8863as-s/UPSPROJECT/UPSPROJECT/data/input/integer.txt", ncolumns = 1)
 
 num_strings <- 1000
-string_length <- 10
+string_length_max <- 4
 
-characters <- c(letters, LETTERS, 0:9)
+characters <- c(letters)
 # Generate 1000 random strings with varying lengths (between 5 and 15 characters)
 random_strings <- sapply(1:num_strings, function(x) {
-  string_length <- sample(5:15, 1)  # Random string length between 5 and 15
-  paste(sample(characters, string_length, replace = TRUE), collapse = "")
+  paste(sample(characters, string_length_max, replace = TRUE), collapse = "")
 })
 
-write(random_strings, file = "/h/d2/a/ka2300sk-s/UPSPROJECT/data/strings.txt", ncolumns = 1)
+write(random_strings, file = "/h/d1/g/er8863as-s/UPSPROJECT/UPSPROJECT/data/input/strings.txt", ncolumns = 1)
+
+random_numbers <- sample(1:950000, 1000, replace = TRUE)
+

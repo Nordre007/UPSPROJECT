@@ -14,6 +14,8 @@ public class HashSetTest {
     private static HashSet<String> StringSet;
     private static HashSet<Person> PersonSet;
     private static ArrayList<Person> PersonList;
+    private static ArrayList<Integer> IntList;
+    private static ArrayList<String> StringList;
 
     private static final int SmallestInt = 1;
     private static final int BiggestInt = 2;
@@ -68,6 +70,8 @@ public class HashSetTest {
             outputFindBiggestPersonFile.write("Löporder, Tid (mikrosekund) \n");
 
             PersonList = new ArrayList<Person>();
+            IntList = new ArrayList<>();
+            StringList = new ArrayList<>();
 
             while (inputPersonAgeFile.hasNext()) {
                 int age = Integer.parseInt(inputPersonAgeFile.next());
@@ -76,10 +80,18 @@ public class HashSetTest {
                 PersonList.add(p);
             }
 
-            Iterator<Person> itr = PersonList.iterator();
+            while(inputIntFile.hasNext()){
+                IntList.add(Integer.parseInt(inputIntFile.next()));
+            }
+
+            while(inputStringFile.hasNext()){
+                StringList.add(inputStringFile.next());
+            }
+
+            
 
             // Tiden att sätta in integers
-            addInt(inputIntFile, outputAddIntFile);
+            addInt(IntList, outputAddIntFile);
 
             // Tiden att finna minsta, mellan, största elementen
             findInt(intSet, SmallestInt, outputFindSmallestIntFile);
@@ -87,7 +99,7 @@ public class HashSetTest {
             findInt(intSet, BiggestInt, outputFindBiggestIntFile);
 
             // Tiden att sätta in strings
-            addString(inputStringFile, outputAddStringFile);
+            addString(StringList, outputAddStringFile);
 
             // Tiden att finna minsta, mellan, största elementen
             findString(StringSet, SmallestString, outputFindSmallestStringFile);
@@ -95,7 +107,7 @@ public class HashSetTest {
             findString(StringSet, BiggestString, outputFindBiggestStringFile);
 
             // Tiden att sätta in personer
-            addPerson(itr, outputAddPersonFile);
+            addPerson(PersonList, outputAddPersonFile);
 
             // Tiden att finna minsta, mellan och största elementen
             findPerson(PersonSet, SmallestPerson, outputFindSmallestPersonFile);
@@ -125,14 +137,15 @@ public class HashSetTest {
 
     }
 
-    public static void addInt(Scanner input, FileWriter output) throws IOException {
+    public static void addInt(ArrayList<Integer> input, FileWriter output) throws IOException {
         for (int i = 1; i <= 600; i++) {
             intSet = new HashSet<Integer>();
+            Iterator<Integer> itr = input.iterator();
 
             long startInputInt = System.nanoTime();
-            while (input.hasNext()) {
+            while (itr.hasNext()) {
 
-                intSet.add(Integer.parseInt(input.next()));
+                intSet.add(itr.next());
             }
             long stopInputInt = System.nanoTime();
 
@@ -140,14 +153,16 @@ public class HashSetTest {
         }
     }
 
-    public static void addString(Scanner input, FileWriter output) throws IOException {
+    public static void addString(ArrayList<String> input, FileWriter output) throws IOException {
         for (int i = 1; i <= 600; i++) {
             StringSet = new HashSet<String>();
+            Iterator<String> itr = input.iterator();
+
 
             long startInputInt = System.nanoTime();
-            while (input.hasNext()) {
+            while (itr.hasNext()) {
 
-                StringSet.add(input.next());
+                StringSet.add(itr.next());
             }
             long stopInputInt = System.nanoTime();
 
@@ -155,9 +170,10 @@ public class HashSetTest {
         }
     }
 
-    public static void addPerson(Iterator<Person> itr, FileWriter output) throws IOException {
+    public static void addPerson(ArrayList<Person> PersonList, FileWriter output) throws IOException {
         for (int i = 1; i <= 600; i++) {
             PersonSet = new HashSet<Person>();
+            Iterator<Person> itr = PersonList.iterator();
 
             long startInputInt = System.nanoTime();
             while (itr.hasNext()) {

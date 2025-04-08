@@ -44,11 +44,49 @@ plotresult <- function(file, start = 1) {
 }
 
 
+output_files <- file.path("UPSPROJECT/pdf/pdfTreeSet/", c(
+  "addInt.png",
+  "findSmallInt.png",
+  "findMiddleInt.png",
+  "findBigInt.png",
+  "addString.png",
+  "findSmallString.png",
+  "findMiddleString.png",
+  "findBigString.png",
+  "addPerson.png",
+  "findSmallPerson.png",
+  "findMiddlePerson.png",
+  "findBigPerson.png"
+))
 
-# Plot till skärm (valfritt)
-plotresult("UPSPROJECT/data/outputTreeSet/addInt.txt")
+# Matchande TXT-filer (input)
+input_files <- file.path("UPSPROJECT/data/outputTreeSet/", c(
+  "addInt.txt",
+  "findSmallInt.txt",
+  "findMiddleInt.txt",
+  "findBigInt.txt",
+  "addString.txt",
+  "findSmallString.txt",
+  "findMiddleString.txt",
+  "findBigString.txt",
+  "addPerson.txt",
+  "findSmallPerson.txt",
+  "findMiddlePerson.txt",
+  "findBigPerson.txt"
+))
 
-# Plot till PNG-fil
-png("UPSPROJECT/pdf/pdfTreeSet/addInt.png", width = 800, height = 600)
-plotresult("UPSPROJECT/data/outputTreeSet/addInt.txt")
-dev.off()
+# Plotfunktion
+plotresult <- function(file, start = 1) {
+  data <- read.csv(file)
+  data <- data[start:nrow(data), ]
+  plot(data, type = 'l',
+       ylab = "tid i ns",
+       xlab = "iterationer")
+}
+
+# Loopa igenom filerna och skapa grafer
+for (i in seq_along(output_files)) {
+  png(output_files[i], width = 800, height = 600)
+  plotresult(input_files[i])
+  dev.off()
+}

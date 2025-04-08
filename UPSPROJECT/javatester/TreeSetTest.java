@@ -8,25 +8,26 @@ import java.util.ArrayList;
 import java.util.TreeSet;
 import java.util.Iterator;
 import java.util.Scanner;
-import javatester.Person;
 
 public class TreeSetTest {
     private static TreeSet<Integer> intSet;
     private static TreeSet<String> StringSet;
     private static TreeSet<Person> PersonSet;
     private static ArrayList<Person> PersonList;
+    private static ArrayList<Integer> IntList;
+    private static ArrayList<String> StringList;
 
-    private static final int SmallestInt = 1;
-    private static final int BiggestInt = 2;
-    private static final int MiddleInt = 3;
+    private static final int SmallestInt = 287;
+    private static final int BiggestInt = 245138;
+    private static final int MiddleInt = 456794;
 
-    private static final String SmallestString = "a";
-    private static final String BiggestString = "b";
-    private static final String MiddleString = "c";
+    private static final String SmallestString = "aajz";
+    private static final String BiggestString = "mplr";
+    private static final String MiddleString = "zziu";
 
-    private static final Person SmallestPerson = new Person(1, "a");
-    private static final Person BiggestPerson = new Person(2, "b");
-    private static final Person MiddlePerson = new Person(3, "c");
+    private static final Person SmallestPerson = new Person(287, "aajz");
+    private static final Person BiggestPerson = new Person(245138, "mplr");
+    private static final Person MiddlePerson = new Person(456794, "zziu");
 
     /*
      * 16 filer som parametrar?
@@ -69,6 +70,8 @@ public class TreeSetTest {
             outputFindBiggestPersonFile.write("Löporder, Tid (mikrosekund) \n");
 
             PersonList = new ArrayList<Person>();
+            IntList = new ArrayList<>();
+            StringList = new ArrayList<>();
 
             while (inputPersonAgeFile.hasNext()) {
                 int age = Integer.parseInt(inputPersonAgeFile.next());
@@ -77,10 +80,18 @@ public class TreeSetTest {
                 PersonList.add(p);
             }
 
-            Iterator<Person> itr = PersonList.iterator();
+            while(inputIntFile.hasNext()){
+                IntList.add(Integer.parseInt(inputIntFile.next()));
+            }
+
+            while(inputStringFile.hasNext()){
+                StringList.add(inputStringFile.next());
+            }
+
+            
 
             // Tiden att sätta in integers
-            addInt(inputIntFile, outputAddIntFile);
+            addInt(IntList, outputAddIntFile);
 
             // Tiden att finna minsta, mellan, största elementen
             findInt(intSet, SmallestInt, outputFindSmallestIntFile);
@@ -88,7 +99,7 @@ public class TreeSetTest {
             findInt(intSet, BiggestInt, outputFindBiggestIntFile);
 
             // Tiden att sätta in strings
-            addString(inputStringFile, outputAddStringFile);
+            addString(StringList, outputAddStringFile);
 
             // Tiden att finna minsta, mellan, största elementen
             findString(StringSet, SmallestString, outputFindSmallestStringFile);
@@ -96,7 +107,7 @@ public class TreeSetTest {
             findString(StringSet, BiggestString, outputFindBiggestStringFile);
 
             // Tiden att sätta in personer
-            addPerson(itr, outputAddPersonFile);
+            addPerson(PersonList, outputAddPersonFile);
 
             // Tiden att finna minsta, mellan och största elementen
             findPerson(PersonSet, SmallestPerson, outputFindSmallestPersonFile);
@@ -126,14 +137,15 @@ public class TreeSetTest {
 
     }
 
-    public static void addInt(Scanner input, FileWriter output) throws IOException {
+    public static void addInt(ArrayList<Integer> input, FileWriter output) throws IOException {
         for (int i = 1; i <= 600; i++) {
             intSet = new TreeSet<Integer>();
+            Iterator<Integer> itr = input.iterator();
 
             long startInputInt = System.nanoTime();
-            while (input.hasNext()) {
+            while (itr.hasNext()) {
 
-                intSet.add(Integer.parseInt(input.next()));
+                intSet.add(itr.next());
             }
             long stopInputInt = System.nanoTime();
 
@@ -141,14 +153,16 @@ public class TreeSetTest {
         }
     }
 
-    public static void addString(Scanner input, FileWriter output) throws IOException {
+    public static void addString(ArrayList<String> input, FileWriter output) throws IOException {
         for (int i = 1; i <= 600; i++) {
             StringSet = new TreeSet<String>();
+            Iterator<String> itr = input.iterator();
+
 
             long startInputInt = System.nanoTime();
-            while (input.hasNext()) {
+            while (itr.hasNext()) {
 
-                StringSet.add(input.next());
+                StringSet.add(itr.next());
             }
             long stopInputInt = System.nanoTime();
 
@@ -156,9 +170,10 @@ public class TreeSetTest {
         }
     }
 
-    public static void addPerson(Iterator<Person> itr, FileWriter output) throws IOException {
+    public static void addPerson(ArrayList<Person> PersonList, FileWriter output) throws IOException {
         for (int i = 1; i <= 600; i++) {
             PersonSet = new TreeSet<Person>();
+            Iterator<Person> itr = PersonList.iterator();
 
             long startInputInt = System.nanoTime();
             while (itr.hasNext()) {
