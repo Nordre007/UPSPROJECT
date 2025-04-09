@@ -1,0 +1,12 @@
+
+	Welch Two Sample t-test
+
+data:  treeset and hashset
+t = 4.7737, df = 16.719, p-value = 0.0001843
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+  38.89806 100.65406
+sample estimates:
+mean of x mean of y 
+ 307.7289  237.9529 
+
