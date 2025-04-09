@@ -18,7 +18,7 @@ run_welch_test <- function(treeset, hashset, label = "test") {
 
   return(result)
 }
-
+ 
 
 # 10 medelvärden från 600 iterationer
 treeset_times <- c(811, 802, 790, 830, 799, 815, 820, 809, 800, 795)
