@@ -1,8 +1,8 @@
-random_numbers <- sample(1:457000, 1000, replace = TRUE)
+random_numbers <- sample(1:457000, 100000, replace = TRUE)
 
 write(random_numbers, file = "/h/d1/g/er8863as-s/UPSPROJECT/UPSPROJECT/data/input/integer.txt", ncolumns = 1)
 
-num_strings <- 1000
+num_strings <- 100000
 string_length_max <- 4
 
 characters <- c(letters)
