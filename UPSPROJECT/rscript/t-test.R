@@ -49,22 +49,34 @@ run_welch_test(TreemedelvärdeFindsmallInt, HashmedelvärdeFindsmallInt, label =
 run_welch_test(TreemedelvärdeFindMiddleInt, HashmedelvärdeFindMiddleInt, label = "FindMiddleInt")
 run_welch_test(TreemedelvärdeFindBigInt, HashmedelvärdeFindBigInt, label = "FindBigInt")
 
-TreemedelvärdeaddString
-HashmedelvärdeaddString
+TreemedelvärdeaddString <- read.csv("UPSPROJECT/data/statistik/outputTreeSet/addString.txt")$x[-(1:3)]
+HashmedelvärdeaddString <- read.csv("UPSPROJECT/data/statistik/outputHashSet/addString.txt")$x[-(1:3)]
 
-TreemedelvärdeFindSmallString
-HashmedelvärdeFindSmallString
+TreemedelvärdeFindSmallString <- read.csv("UPSPROJECT/data/statistik/outputTreeSet/findSmallString.txt")$x[-(1:3)]
+HashmedelvärdeFindSmallString <- read.csv("UPSPROJECT/data/statistik/outputHashSet/findSmallString.txt")$x[-(1:3)]
 
-TreemedelvärdeFindMiddleString
-HashmedelvärdeFindSmallString
+TreemedelvärdeFindMiddleString <- read.csv("UPSPROJECT/data/statistik/outputTreeSet/findMiddleString.txt")$x[-(1:3)]
+HashmedelvärdeFindSmallString <- read.csv("UPSPROJECT/data/statistik/outputHashSet/findMiddleString.txt")$x[-(1:3)]
 
-TreemedelvärdeFindBigString
-HashmedelvärdeFindBigString
+TreemedelvärdeFindBigString <- read.csv("UPSPROJECT/data/statistik/outputTreeSet/findBigString.txt")$x[-(1:3)]
+HashmedelvärdeFindBigString <- read.csv("UPSPROJECT/data/statistik/outputHashSet/findBigString.txt")$x[-(1:3)]
 
 run_welch_test(TreemedelvärdeaddString, HashmedelvärdeaddString, label = "addString")
 run_welch_test(TreemedelvärdeFindSmallString, HashmedelvärdeFindSmallString, label = "FindSmallString")
 run_welch_test(TreemedelvärdeFindMiddleString, HashmedelvärdeFindSmallString, label = "FindMiddleString")
 run_welch_test(TreemedelvärdeFindBigString, HashmedelvärdeFindBigString, label = "FindBigString")
+
+TreemedelvärdeaddPerson <- read.csv("UPSPROJECT/data/statistik/outputTreeSet/addPerson.txt")$x[-(1:3)]
+HashmedelvärdeaddPerson <- read.csv("UPSPROJECT/data/statistik/outputHashSet/addPerson.txt")$x[-(1:3)]
+
+TreemedelvärdeFindSmallPerson <- read.csv("UPSPROJECT/data/statistik/outputTreeSet/findSmallPerson.txt")$x[-(1:3)]
+HashmedelvärdeFindSmallPerson <- read.csv("UPSPROJECT/data/statistik/outputHashSet/findSmallPerson.txt")$x[-(1:3)]
+
+TreemedelvärdeFindMiddlePerson <- read.csv("UPSPROJECT/data/statistik/outputTreeSet/findMiddlePerson.txt")$x[-(1:3)]
+HashmedelvärdeFindMiddlePerson <- read.csv("UPSPROJECT/data/statistik/outputHashSet/findMiddlePerson.txt")$x[-(1:3)]
+
+TreemedelvärdeFindBigPerson <- read.csv("UPSPROJECT/data/statistik/outputTreeSet/findBigPerson.txt")$x[-(1:3)]
+HashmedelvärdeFindBigPerson <- read.csv("UPSPROJECT/data/statistik/outputHashSet/findBigPerson.txt")$x[-(1:3)]
 
 run_welch_test(TreemedelvärdeaddPerson, HashmedelvärdeaddPerson, label = "addPerson")
 run_welch_test(TreemedelvärdeFindSmallPerson, HashmedelvärdeFindSmallPerson, label = "FindSmallPerson")
