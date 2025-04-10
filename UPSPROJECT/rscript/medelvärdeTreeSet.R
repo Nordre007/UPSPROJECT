@@ -77,117 +77,63 @@ HashmedelvärdeFindMiddlePerson <- c()
 HashmedelvärdeFindBigPerson <- c()
 
 
-for (i in 1:10) {
+for (i in 1:100) {
     
     system(command_tree)
 
     TreeDataAddInt <- as.data.frame(read.csv("/h/d1/g/er8863as-s/UPSPROJECT/UPSPROJECT/data/outputTreeSet/addInt.txt"))
-    TreeTiderAddInt <- as.vector(as.numeric(na.omit(TreeDataAddInt[200:600, 2])))
+    TreeTiderAddInt <- as.vector(as.numeric(na.omit(TreeDataAddInt[50:600, 2])))
     TreemedelvärdeaddInt <- c(TreemedelvärdeaddInt, (mean(TreeTiderAddInt, na.rm = T)))
 
     TreeDataFindSmallInt <- as.data.frame(read.csv("/h/d1/g/er8863as-s/UPSPROJECT/UPSPROJECT/data/outputTreeSet/findSmallInt.txt"))
-    TreeTiderFindSmallInt <- as.vector(as.numeric(na.omit(TreeDataFindSmallInt[200:600, 2])))
+    TreeTiderFindSmallInt <- as.vector(as.numeric(na.omit(TreeDataFindSmallInt[5:600, 2])))
     TreemedelvärdeFindsmallInt <- c(TreemedelvärdeFindsmallInt, (mean(TreeTiderFindSmallInt, na.rm = T)))
 
     TreeDataFindMiddleInt <- as.data.frame(read.csv("/h/d1/g/er8863as-s/UPSPROJECT/UPSPROJECT/data/outputTreeSet/findMiddleInt.txt"))
-    TreeTiderFindMiddleInt <- as.vector(as.numeric(na.omit(TreeDataFindMiddleInt[200:600, 2])))
+    TreeTiderFindMiddleInt <- as.vector(as.numeric(na.omit(TreeDataFindMiddleInt[1:600, 2])))
     TreemedelvärdeFindMiddleInt <- c(TreemedelvärdeFindMiddleInt, (mean(TreeTiderFindMiddleInt, na.rm = T)))
 
     TreeDataFindBigInt <- as.data.frame(read.csv("/h/d1/g/er8863as-s/UPSPROJECT/UPSPROJECT/data/outputTreeSet/findBigInt.txt"))
-    TreTiderFindBigInt <- as.vector(as.numeric(na.omit(TreeDataFindBigInt[200:600, 2])))
+    TreTiderFindBigInt <- as.vector(as.numeric(na.omit(TreeDataFindBigInt[1:600, 2])))
     TreemedelvärdeFindBigInt <- c(TreemedelvärdeFindBigInt, (mean(TreTiderFindBigInt, na.rm = T)))
 
 
     TreeDataAddString<- as.data.frame(read.csv("/h/d1/g/er8863as-s/UPSPROJECT/UPSPROJECT/data/outputTreeSet/addString.txt"))
-    TreeTiderAddString <- as.vector(as.numeric(na.omit(TreeDataAddString[200:600, 2])))
+    TreeTiderAddString <- as.vector(as.numeric(na.omit(TreeDataAddString[1:600, 2])))
     TreemedelvärdeaddString <- c(TreemedelvärdeaddString, (mean(TreeTiderAddString, na.rm = T)))
 
     TreeDataFindSmallString<- as.data.frame(read.csv("/h/d1/g/er8863as-s/UPSPROJECT/UPSPROJECT/data/outputTreeSet/findSmallString.txt"))
-    TreeTiderFindSmallString <- as.vector(as.numeric(na.omit(TreeDataFindSmallString[200:600, 2])))
+    TreeTiderFindSmallString <- as.vector(as.numeric(na.omit(TreeDataFindSmallString[10:600, 2])))
     TreemedelvärdeFindSmallString <- c(TreemedelvärdeFindSmallString, (mean(TreeTiderFindSmallString, na.rm = T)))
 
     TreeDataFindMiddleString<- as.data.frame(read.csv("//h/d1/g/er8863as-s/UPSPROJECT/UPSPROJECT/data/outputTreeSet/findMiddleString.txt"))
-    TreeTiderFindMiddleString <- as.vector(as.numeric(na.omit(TreeDataFindMiddleString[200:600, 2])))
+    TreeTiderFindMiddleString <- as.vector(as.numeric(na.omit(TreeDataFindMiddleString[400:600, 2])))
     TreemedelvärdeFindMiddleString <- c(TreemedelvärdeFindMiddleString, (mean(TreeTiderFindMiddleString, na.rm = T)))
 
     TreeDataFindBigString<- as.data.frame(read.csv("/h/d1/g/er8863as-s/UPSPROJECT/UPSPROJECT/data/outputTreeSet/findBigString.txt"))
-    TreeTiderFindBigString <- as.vector(as.numeric(na.omit(TreeDataFindBigString[200:600, 2])))
+    TreeTiderFindBigString <- as.vector(as.numeric(na.omit(TreeDataFindBigString[5:600, 2])))
     TreemedelvärdeFindBigString <- c(TreemedelvärdeFindBigString, (mean(TreeTiderFindBigString, na.rm = T)))
 
 
     TreeDataAddPerson <- as.data.frame(read.csv("/h/d1/g/er8863as-s/UPSPROJECT/UPSPROJECT/data/outputTreeSet/addPerson.txt"))
-    TreeTiderAddPerson <- as.vector(as.numeric(na.omit(TreeDataAddPerson[200:600, 2])))
+    TreeTiderAddPerson <- as.vector(as.numeric(na.omit(TreeDataAddPerson[1:600, 2])))
     TreemedelvärdeaddPerson <- c(TreemedelvärdeaddPerson, (mean(TreeTiderAddPerson, na.rm = T)))
     
     TreeDataFindSmallPerson <- as.data.frame(read.csv("/h/d1/g/er8863as-s/UPSPROJECT/UPSPROJECT/data/outputTreeSet/findSmallPerson.txt"))
-    TreeTiderFindSmallPerson <- as.vector(as.numeric(na.omit(TreeDataFindSmallPerson[200:600, 2])))
+    TreeTiderFindSmallPerson <- as.vector(as.numeric(na.omit(TreeDataFindSmallPerson[5:600, 2])))
     TreemedelvärdeFindSmallPerson <- c(TreemedelvärdeFindSmallPerson, (mean(TreeTiderFindSmallPerson, na.rm = T)))
     
     TreeDataFindMiddlePerson <- as.data.frame(read.csv("/h/d1/g/er8863as-s/UPSPROJECT/UPSPROJECT/data/outputTreeSet/findMiddlePerson.txt"))
-    TreeTiderFindMiddlePerson <- as.vector(as.numeric(na.omit(TreeDataFindMiddlePerson[200:600, 2])))
+    TreeTiderFindMiddlePerson <- as.vector(as.numeric(na.omit(TreeDataFindMiddlePerson[5:600, 2])))
     TreemedelvärdeFindMiddlePerson <- c(TreemedelvärdeFindMiddlePerson, (mean(TreeTiderFindMiddlePerson, na.rm = T)))
     
     TreeDataFindBigPerson <- as.data.frame(read.csv("/h/d1/g/er8863as-s/UPSPROJECT/UPSPROJECT/data/outputTreeSet/findBigPerson.txt"))
-    TreeTiderFindBigPerson <- as.vector(as.numeric(na.omit(TreeDataFindBigPerson[200:600, 2])))
+    TreeTiderFindBigPerson <- as.vector(as.numeric(na.omit(TreeDataFindBigPerson[5:600, 2])))
     TreemedelvärdeFindBigPerson <- c(TreemedelvärdeFindBigPerson, (mean(TreeTiderFindBigPerson, na.rm = T)))
 
 }
 
-for (i in 1:10){
-    #Hash
 
-    system(command_hash)
-    
-    dataaddInt <- as.data.frame(read.csv("/h/d1/g/er8863as-s/UPSPROJECT/UPSPROJECT/data/outputHashSet/addInt.txt"))
-    tideraddInt <- as.vector(as.numeric(na.omit(dataaddInt[200:600, 2])))
-    HashmedelvärdeaddInt <- c(HashmedelvärdeaddInt, (mean(tideraddInt, na.rm = T)))
-
-    dataFindSmallInt <- as.data.frame(read.csv("/h/d1/g/er8863as-s/UPSPROJECT/UPSPROJECT/data/outputHashSet/findSmallInt.txt"))
-    tiderFindSmallInt <- as.vector(as.numeric(na.omit(dataFindSmallInt[200:600, 2])))
-    HashmedelvärdeFindsmallInt <- c(HashmedelvärdeFindsmallInt, (mean(tiderFindSmallInt, na.rm = T)))
-
-    dataFindMiddleInt <- as.data.frame(read.csv("/h/d1/g/er8863as-s/UPSPROJECT/UPSPROJECT/data/outputHashSet/findMiddleInt.txt"))
-    tiderFindMiddleInt <- as.vector(as.numeric(na.omit(dataFindMiddleInt[200:600, 2])))
-    HashmedelvärdeFindMiddleInt <- c(HashmedelvärdeFindMiddleInt, (mean(tiderFindMiddleInt, na.rm = T)))
-
-    dataFindBigInt <- as.data.frame(read.csv("/h/d1/g/er8863as-s/UPSPROJECT/UPSPROJECT/data/outputHashSet/findBigInt.txt"))
-    tiderFindBigInt <- as.vector(as.numeric(na.omit(dataFindBigInt[200:600, 2])))
-    HashmedelvärdeFindBigInt <- c(HashmedelvärdeFindBigInt, (mean(tiderFindBigInt, na.rm = T)))
-
-
-    dataaddString<- as.data.frame(read.csv("/h/d1/g/er8863as-s/UPSPROJECT/UPSPROJECT/data/outputHashSet/addString.txt"))
-    tideraddString <- as.vector(as.numeric(na.omit(dataaddString[200:600, 2])))
-    HashmedelvärdeaddString <- c(HashmedelvärdeaddString, (mean(tideraddString, na.rm = T)))
-
-    dataFindSmallString<- as.data.frame(read.csv("/h/d1/g/er8863as-s/UPSPROJECT/UPSPROJECT/data/outputHashSet/findSmallString.txt"))
-    tiderFindSmallString <- as.vector(as.numeric(na.omit(dataFindSmallString[200:600, 2])))
-    HashmedelvärdeFindSmallString <- c(HashmedelvärdeFindSmallString, (mean(tiderFindSmallString, na.rm = T)))
-
-    dataFindMiddleString<- as.data.frame(read.csv("//h/d1/g/er8863as-s/UPSPROJECT/UPSPROJECT/data/outputHashSet/findMiddleString.txt"))
-    tiderFindMiddleString <- as.vector(as.numeric(na.omit(dataFindMiddleString[200:600, 2])))
-    HashmedelvärdeFindMiddleString <- c(HashmedelvärdeFindMiddleString, (mean(tiderFindMiddleString, na.rm = T)))
-
-    dataFindBigString<- as.data.frame(read.csv("/h/d1/g/er8863as-s/UPSPROJECT/UPSPROJECT/data/outputHashSet/findBigString.txt"))
-    tiderFindBigString <- as.vector(as.numeric(na.omit(dataFindBigString[200:600, 2])))
-    HashmedelvärdeFindBigString <- c(HashmedelvärdeFindBigString, (mean(tiderFindBigString, na.rm = T)))
-
-
-    dataaddperson <- as.data.frame(read.csv("/h/d1/g/er8863as-s/UPSPROJECT/UPSPROJECT/data/outputHashSet/addPerson.txt"))
-    tideraddPeron <- as.vector(as.numeric(na.omit(dataaddperson[200:600, 2])))
-    HashmedelvärdeaddPerson <- c(HashmedelvärdeaddPerson, (mean(tideraddPeron, na.rm = T)))
-    
-    dataFindSmallPerson <- as.data.frame(read.csv("/h/d1/g/er8863as-s/UPSPROJECT/UPSPROJECT/data/outputHashSet/findSmallPerson.txt"))
-    tiderFindSmallPerson <- as.vector(as.numeric(na.omit(dataFindSmallPerson[200:600, 2])))
-    HashmedelvärdeFindSmallPerson <- c(HashmedelvärdeFindSmallPerson, (mean(tiderFindSmallPerson, na.rm = T)))
-    
-    dataFindMiddlePerson <- as.data.frame(read.csv("/h/d1/g/er8863as-s/UPSPROJECT/UPSPROJECT/data/outputHashSet/findMiddlePerson.txt"))
-    tiderFindMiddlePerson <- as.vector(as.numeric(na.omit(dataFindMiddlePerson[200:600, 2])))
-    HashmedelvärdeFindMiddlePerson <- c(HashmedelvärdeFindMiddlePerson, (mean(tiderFindMiddlePerson, na.rm = T)))
-    
-    dataFindBigPerson <- as.data.frame(read.csv("/h/d1/g/er8863as-s/UPSPROJECT/UPSPROJECT/data/outputHashSet/findBigPerson.txt"))
-    tiderFindBigPerson <- as.vector(as.numeric(na.omit(dataFindBigPerson[200:600, 2])))
-    HashmedelvärdeFindBigPerson <- c(HashmedelvärdeFindBigPerson, (mean(tiderFindBigPerson, na.rm = T)))
-}
 
 
 
@@ -229,92 +175,5 @@ write.csv(findMiddlePerson, "/h/d1/g/er8863as-s/UPSPROJECT/UPSPROJECT/data/stati
 findBigPerson <- c(mean(TreemedelvärdeFindBigPerson), confidenceInterval(TreemedelvärdeFindBigPerson, confidenceLevel=0.95), TreemedelvärdeFindBigPerson)
 write.csv(findBigPerson, "/h/d1/g/er8863as-s/UPSPROJECT/UPSPROJECT/data/statistik/outputTreeSet/findBigPerson.txt")
 
-#Hash
-
-addInt <- c(mean(HashmedelvärdeaddInt), confidenceInterval(HashmedelvärdeaddInt, confidenceLevel=0.95), HashmedelvärdeaddInt)
-write.csv(addInt, "/h/d1/g/er8863as-s/UPSPROJECT/UPSPROJECT/data/statistik/outputHashSet/addInt.txt")
-
-findSmallInt <- c(mean(HashmedelvärdeFindsmallInt), confidenceInterval(HashmedelvärdeFindsmallInt, confidenceLevel=0.95), HashmedelvärdeFindsmallInt)
-write.csv(findSmallInt, "/h/d1/g/er8863as-s/UPSPROJECT/UPSPROJECT/data/statistik/outputHashSet/findSmallInt.txt")
-
-findMiddleInt <- c(mean(HashmedelvärdeFindMiddleInt), confidenceInterval(HashmedelvärdeFindMiddleInt, confidenceLevel=0.95), HashmedelvärdeFindMiddleInt)
-write.csv(findMiddleInt, "/h/d1/g/er8863as-s/UPSPROJECT/UPSPROJECT/data/statistik/outputHashSet/findMiddleInt.txt")
-
-findBigInt <- c(mean(HashmedelvärdeFindBigInt), confidenceInterval(HashmedelvärdeFindBigInt, confidenceLevel=0.95), HashmedelvärdeFindBigInt)
-write.csv(findBigInt, "/h/d1/g/er8863as-s/UPSPROJECT/UPSPROJECT/data/statistik/outputHashSet/findBigInt.txt")
-
-addString <- c(mean(HashmedelvärdeaddString), confidenceInterval(HashmedelvärdeaddString, confidenceLevel=0.95), HashmedelvärdeaddString)
-write.csv(addString, "/h/d1/g/er8863as-s/UPSPROJECT/UPSPROJECT/data/statistik/outputHashSet/addString.txt")
-
-findSmallString <- c(mean(HashmedelvärdeFindSmallString), confidenceInterval(HashmedelvärdeFindSmallString, confidenceLevel=0.95), HashmedelvärdeFindSmallString)
-write.csv(findSmallString, "/h/d1/g/er8863as-s/UPSPROJECT/UPSPROJECT/data/statistik/outputHashSet/findSmallString.txt")
-
-findMiddleString <- c(mean(HashmedelvärdeFindMiddleString), confidenceInterval(HashmedelvärdeFindMiddleString, confidenceLevel=0.95), HashmedelvärdeFindMiddleString)
-write.csv(findMiddleString, "/h/d1/g/er8863as-s/UPSPROJECT/UPSPROJECT/data/statistik/outputHashSet/findMiddleString.txt")
-
-findBigString <- c(mean(HashmedelvärdeFindBigString), confidenceInterval(HashmedelvärdeFindBigString, confidenceLevel=0.95), HashmedelvärdeFindBigString)
-write.csv(findBigString, "/h/d1/g/er8863as-s/UPSPROJECT/UPSPROJECT/data/statistik/outputHashSet/findBigString.txt")
-
-addPerson <- c(mean(HashmedelvärdeaddPerson), confidenceInterval(HashmedelvärdeaddPerson, confidenceLevel=0.95), HashmedelvärdeaddPerson)
-write.csv(addPerson, "/h/d1/g/er8863as-s/UPSPROJECT/UPSPROJECT/data/statistik/outputHashSet/addPerson.txt")
-
-findSmallPerson <- c(mean(HashmedelvärdeFindSmallPerson), confidenceInterval(HashmedelvärdeFindSmallPerson, confidenceLevel=0.95), HashmedelvärdeFindSmallPerson)
-write.csv(findSmallPerson, "/h/d1/g/er8863as-s/UPSPROJECT/UPSPROJECT/data/statistik/outputHashSet/findSmallPerson.txt")
-
-findMiddlePerson <- c(mean(HashmedelvärdeFindMiddlePerson), confidenceInterval(HashmedelvärdeFindMiddlePerson, confidenceLevel=0.95), HashmedelvärdeFindMiddlePerson)
-write.csv(findMiddlePerson, "/h/d1/g/er8863as-s/UPSPROJECT/UPSPROJECT/data/statistik/outputHashSet/findMiddlePerson.txt")
-
-findBigPerson <- c(mean(HashmedelvärdeFindBigPerson), confidenceInterval(HashmedelvärdeFindBigPerson, confidenceLevel=0.95), HashmedelvärdeFindBigPerson)
-write.csv(findBigPerson, "/h/d1/g/er8863as-s/UPSPROJECT/UPSPROJECT/data/statistik/outputHashSet/findBigPerson.txt")
-
-
-
-run_welch_test <- function(treeset, hashset, label = "test") {
-
-  cat("Running Welch test for:", label, "\n")
-  cat("TreeSet length:", length(treeset), "\n")
-  cat("HashSet length:", length(hashset), "\n\n")
-
-  if (length(treeset) < 2 || length(hashset) < 2) {
-    warning(paste("Not enough data for Welch test:", label))
-    return(NULL)
-  }
-
-  # T-test
-  result <- t.test(treeset, hashset, var.equal = FALSE)
-
-  # Spara t-test resultat
-  sink(paste0(label, "_t_test_result.txt"))
-  print(result)
-  sink()
-
-  # Boxplot
-  png(paste0(label, "_boxplot.png"), width = 800, height = 600)
-  boxplot(treeset, hashset,
-          names = c("TreeSet", "HashSet"),
-          main = "Jämförelse av exekveringstider",
-          ylab = "Tid (ns)",
-          col = c("lightblue", "lightgreen"))
-  dev.off()
-
-  return(result)
-}
- 
-
-
-run_welch_test(TreemedelvärdeaddInt, HashmedelvärdeaddInt, label = "addInt")
-run_welch_test(TreemedelvärdeFindsmallInt, HashmedelvärdeFindsmallInt, label = "FindSmallInt")
-run_welch_test(TreemedelvärdeFindsmallInt, HashmedelvärdeFindMiddleInt, label = "FindMiddleInt")
-run_welch_test(TreemedelvärdeFindBigInt, HashmedelvärdeFindBigInt, label = "FindBigInt")
-
-run_welch_test(TreemedelvärdeaddString, HashmedelvärdeaddString, label = "addString")
-run_welch_test(TreemedelvärdeFindSmallString, HashmedelvärdeFindSmallString, label = "FindSmallString")
-run_welch_test(TreemedelvärdeFindMiddleString, HashmedelvärdeFindSmallString, label = "FindMiddleString")
-run_welch_test(TreemedelvärdeFindBigString, HashmedelvärdeFindBigString, label = "FindBigString")
-
-run_welch_test(TreemedelvärdeaddPerson, HashmedelvärdeaddPerson, label = "addPerson")
-run_welch_test(TreemedelvärdeFindSmallPerson, HashmedelvärdeFindSmallPerson, label = "FindSmallPerson")
-run_welch_test(TreemedelvärdeFindMiddlePerson, HashmedelvärdeFindMiddlePerson, label = "FindMiddlePerson")
-run_welch_test(TreemedelvärdeFindBigPerson, HashmedelvärdeFindBigPerson, label = "FindBigPerson")
 
 

@@ -18,16 +18,16 @@ public class TreeSetTest {
     private static ArrayList<String> StringList;
 
     private static final int SmallestInt = 2;
-    private static final int BiggestInt = 227814;
-    private static final int MiddleInt = 456996;
+    private static final int BiggestInt = 50095;
+    private static final int MiddleInt = 100000;
 
-    private static final String SmallestString = "aaaa";
-    private static final String BiggestString = "mzmv";
-    private static final String MiddleString = "zzzy";
+    private static final String SmallestString = "aaae";
+    private static final String BiggestString = "nbxo";
+    private static final String MiddleString = "zzzx";
 
-    private static final Person SmallestPerson = new Person(2, "aaaa");
-    private static final Person BiggestPerson = new Person(227814, "mzmv");
-    private static final Person MiddlePerson = new Person(456996, "zzzy");
+    private static final Person SmallestPerson = new Person(2, "aaae");
+    private static final Person BiggestPerson = new Person(50095, "nbxo");
+    private static final Person MiddlePerson = new Person(100000, "zzzx");
 
     /*
      * 16 filer som parametrar?
